@@ -1,0 +1,21 @@
+digraph "Diagrama entidad-relacion" {
+	Cliente
+	Hotel
+	"Habitación"
+	Reserva
+	Servicio
+	Empleado
+	"Subclase de servicio"
+	"Tipo de habitación"
+	Cliente -> Reserva [label="1:N"]
+	Hotel -> "Habitación" [label="1:N"]
+	Hotel -> Reserva [label="1:N"]
+	Hotel -> Empleado [label="1:N"]
+	"Habitación" -> Reserva [label="1:N"]
+	"Habitación" -> "Tipo de habitación" [label="1:N"]
+	Reserva -> Cliente [label="1:1"]
+	Reserva -> Servicio [label="N:N"]
+	Servicio -> Reserva [label="N:N"]
+	Servicio -> "Subclase de servicio" [label="1:1"]
+	"Subclase de servicio" -> Servicio [label="1:1"]
+}
